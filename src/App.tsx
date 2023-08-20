@@ -6,14 +6,14 @@ import { Library } from './components/Library';
 const App = ():JSX.Element =>{
   return (
     <>
-      <div className="grid grid-cols-6 gap-2 my-2 bg-black">
-        <div className="col-span-3">
+      <div className="grid grid-cols-6 lg:grid-cols-8 gap-2 m-2 bg-black">
+        <div className="col-span-3 lg:col-span-2">
           <div className="flex flex-col">
             <ActionHome />
             <Library />
           </div>
           </div>
-        <div className="col-span-3"><InfoSession /></div>
+        <div className="col-span-3 lg:col-span-6"><InfoSession /></div>
       </div>
     </>
   )
