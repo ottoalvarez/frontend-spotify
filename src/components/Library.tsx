@@ -1,3 +1,36 @@
+import { type Album as Template } from "../dto/Albums";
+
+const Albums:Template[] = [
+    {
+        id:1,
+        image: 'https://picsum.photos/50',
+        name: 'Liked Songs',
+        description: 'Playlist · 228 canciones',
+        active: true
+    },
+    {
+        id:4,
+        image: 'https://picsum.photos/50',
+        name: 'Spotify Web API Testing playlist',
+        description: 'Playlist · JMPerez',
+        active: false
+    },
+    {
+        id:2,
+        image: 'https://picsum.photos/50',
+        name: 'Heroes del Silencio',
+        description: 'Artista',
+        active: false
+    },
+    {
+        id:3,
+        image: 'https://picsum.photos/50',
+        name: 'Pennywise',
+        description: 'Artista',
+        active: false
+    }
+]
+
 export const Library = () => {
   return (
     <>
@@ -25,16 +58,20 @@ export const Library = () => {
                 </div>
             </div>
             <div className="grid gap-3 row-auto my-3">
-                <div className="flex">
-                    <img src="https://picsum.photos/50" className="rounded-sm" alt="RandomizeImage" />
-                    <div className="flex flex-col mx-4">
-                        <strong>Liked Songs</strong>
-                        <div className="text-xs text-[#A7A7A7]">
-                            <span className="material-symbols-outlined text-sm rotate-45 text-[#1BD760] mr-2">push_pin</span>
-                            <strong>Playlist · 228 canciones</strong>
+                {
+                    Albums.map(album=>(
+                        <div className="flex" key={album.id}>
+                            <img src={album.image} className={album.description === 'Artista' ? 'rounded-full' : 'rounded-md'} alt="RandomizeImage" />
+                            <div className="flex flex-col mx-4">
+                                <strong>{album.name}</strong>
+                                <div className="text-xs text-[#A7A7A7]">
+                                    { album.active && <span className="material-symbols-outlined text-sm rotate-45 text-[#1BD760] mr-2">push_pin</span> }
+                                    <strong>{album.description}</strong>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    ))
+                }
             </div>
         </div>
     </>

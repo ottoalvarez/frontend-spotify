@@ -1,7 +1,7 @@
-import './styles/App.css'
 import { ActionHome } from "./components/ActionHome";
 import { InfoSession } from './components/InfoSession';
 import { Library } from './components/Library';
+import './styles/App.css'
 
 const App = ():JSX.Element =>{
   return (

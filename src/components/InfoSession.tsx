@@ -1,6 +1,6 @@
 export const InfoSession = () => {
   return (
-    <div className="py-6 px-3 bg-[#1B0301] rounded-lg h-screen">
+    <div className="py-6 px-3 bg-gradient-to-b from-[#1B0301] from-30% to-black to-70% rounded-lg h-screen">
         <div className="flex justify-between">
             <div className="bg-black/30 rounded-full p-1 w-9 h-9 flex content-center items-center">
                 <span className="material-symbols-outlined">chevron_left</span>
